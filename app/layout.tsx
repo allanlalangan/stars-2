@@ -1,5 +1,33 @@
 import "./globals.css";
 import { Libre_Baskerville, Source_Sans_Pro } from "next/font/google";
+import localFont from "next/font/local";
+
+const scilla = localFont({
+  src: [
+    {
+      path: "../public/fonts/Scilla/Scilla-Narrow.otf",
+      weight: "100",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Scilla/Scilla-Narrow-Italic.otf",
+      weight: "100",
+      style: "italic",
+    },
+    {
+      path: "../public/fonts/Scilla/Scilla-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Scilla/Scilla-Regular-Italic.otf",
+      weight: "400",
+      style: "italic",
+    },
+  ],
+  // display: "swap",
+  variable: "--font-scilla",
+});
 
 const libre = Libre_Baskerville({
   subsets: ["latin"],
@@ -24,10 +52,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  console.log(scilla.className);
   return (
     <html
       lang="en"
-      className={`${libre.variable} ${source_sans_pro.variable} bg-base-800 text-white`}
+      className={`${libre.variable} ${scilla.variable} ${source_sans_pro.variable} bg-primary-800 text-white`}
     >
       <body className="font-sans">{children}</body>
     </html>
