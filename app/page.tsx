@@ -1,6 +1,10 @@
+import TodayChart from "@/components/TodayChart";
 import Link from "next/link";
 
-export default function Home() {
+import { getNow } from "@/lib/astro";
+
+export default async function Home() {
+  const now = await getNow();
   return (
     <main className="flex min-h-screen flex-col justify-center p-4">
       <h1 className="text-6xl uppercase tracking-wide font-display text-accent-400">
@@ -19,6 +23,7 @@ export default function Home() {
       >
         Sign In
       </Link>
+      <TodayChart now={now.data} />
     </main>
   );
 }
