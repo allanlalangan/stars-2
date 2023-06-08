@@ -60,6 +60,7 @@ export default function TodayChart({ now }: props) {
         </thead>
         <tbody>
           {!!now &&
+            now !== undefined &&
             planets.map((planet, id) => (
               <tr key={id}>
                 <td className="p-2 border-b border-base-700">{`${planet?.name}${
