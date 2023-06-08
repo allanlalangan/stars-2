@@ -1,35 +1,4 @@
-import { getNow } from "@/lib/astro";
-
-const getFullSignName = (id: number) => {
-  switch (id) {
-    case 0:
-      return "Aries";
-    case 1:
-      return "Taurus";
-    case 2:
-      return "Gemini";
-    case 3:
-      return "Cancer";
-    case 4:
-      return "Leo";
-    case 5:
-      return "Virgo";
-    case 6:
-      return "Libra";
-    case 7:
-      return "Scorpio";
-    case 8:
-      return "Sagittarius";
-    case 9:
-      return "Capricorn";
-    case 10:
-      return "Aquarius";
-    case 11:
-      return "Pisces";
-    default:
-      return "Unknown";
-  }
-};
+import { getFullSignName } from "@/lib/util";
 
 type props = {
   now: any;
@@ -65,6 +34,7 @@ export default function TodayChart({ now }: props) {
   ];
   const nodes = [now.mean_node, now.true_node];
   const lunarPhase = now.lunar_phase;
+
   return (
     <section className="mt-8">
       <h2 className="flex mb-2 items-baseline">
@@ -89,19 +59,20 @@ export default function TodayChart({ now }: props) {
           </tr>
         </thead>
         <tbody>
-          {planets.map((planet, id) => (
-            <tr key={id}>
-              <td className="p-2 border-b border-base-700">{`${planet.name}${
-                planet.retrograde ? " Retrograde" : ""
-              }`}</td>
-              <td className="p-2 border-b border-base-700">{`${planet.position.toFixed(
-                2
-              )}°`}</td>
-              <td className="p-2 border-b border-base-700">{`${getFullSignName(
-                planet.sign_num
-              )}`}</td>
-            </tr>
-          ))}
+          {!!now &&
+            planets.map((planet, id) => (
+              <tr key={id}>
+                <td className="p-2 border-b border-base-700">{`${planet?.name}${
+                  planet?.retrograde ? " Retrograde" : ""
+                }`}</td>
+                <td className="p-2 border-b border-base-700">{`${planet?.position.toFixed(
+                  2
+                )}°`}</td>
+                <td className="p-2 border-b border-base-700">{`${getFullSignName(
+                  planet?.sign_num
+                )}`}</td>
+              </tr>
+            ))}
         </tbody>
       </table>
     </section>

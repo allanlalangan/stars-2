@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import { getNow } from "@/lib/astro";
 import TodayChart from "@/components/TodayChart";
 
