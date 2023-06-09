@@ -52,7 +52,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  console.log(scilla.className);
   return (
     <html
       lang="en"
