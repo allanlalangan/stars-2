@@ -6,6 +6,7 @@ type props = {
 };
 
 export default function TodayChart({ data }: props) {
+  if (!data) return null;
   const planets = [
     data?.data.sun,
     data?.data.moon,
