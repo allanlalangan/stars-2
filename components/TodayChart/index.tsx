@@ -47,7 +47,7 @@ export default function TodayChart({ data }: props) {
   );
   return (
     <section className="flex flex-col">
-      <h2 className="flex items-baseline mb-2">
+      <h2 className="flex items-baseline">
         <span className="font-serif text-2xl text-secondary-400">
           The Sky Today
         </span>
@@ -56,7 +56,10 @@ export default function TodayChart({ data }: props) {
           {dateString.toDateString()}
         </span>
       </h2>
-      <table className="table-auto border-collapse border border-base-700 md:w-1/2">
+      <span className="text-sm text-rose-300 italic">
+        Astro API is currently unmaintained
+      </span>
+      <table className="table-auto border-collapse border border-base-700 md:w-1/2 lg:w-1/3 mt-2">
         <thead>
           <tr className="bg-base-700 text-left">
             <th className="p-2 font-normal tracking-wide">Planet</th>
