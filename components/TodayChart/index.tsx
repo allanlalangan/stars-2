@@ -6,6 +6,7 @@ type props = {
 };
 
 export default function TodayChart({ data }: props) {
+  const today = new Date();
   const planets = [
     data.data.sun,
     data.data.moon,
@@ -48,18 +49,16 @@ export default function TodayChart({ data }: props) {
   return (
     <section className="flex flex-col">
       <h2 className="flex items-baseline">
-        <span className="font-serif text-2xl text-secondary-400">
+        <span className="font-serif text-2xl text-primary-300">
           The Sky Today
         </span>
         <span className="mx-2 font-serif text-base-300">|</span>
         <span className="font-serif text-base-300 text-sm">
-          {dateString.toDateString()}
+          {today.toDateString()}
         </span>
       </h2>
-      <span className="text-sm text-rose-300 italic">
-        Astro API is currently unmaintained
-      </span>
-      <table className="table-auto border-collapse border border-base-700 md:w-1/2 lg:w-1/3 mt-2">
+      <span className="text-accent-300 italic">API coming soon.</span>
+      {/* <table className="table-auto border-collapse border border-base-700 md:w-1/2 lg:w-1/3 mt-2">
         <thead>
           <tr className="bg-base-700 text-left">
             <th className="p-2 font-normal tracking-wide">Planet</th>
@@ -76,7 +75,7 @@ export default function TodayChart({ data }: props) {
             </tr>
           ))}
         </tbody>
-      </table>
+      </table> */}
     </section>
   );
 }

@@ -55,7 +55,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${libre.variable} ${scilla.variable} ${source_sans_pro.variable} bg-primary-800 text-white`}
+      className={`${libre.variable} ${scilla.variable} ${source_sans_pro.variable} bg-secondary-900 text-base-50`}
     >
       <body className="font-sans">{children}</body>
     </html>
