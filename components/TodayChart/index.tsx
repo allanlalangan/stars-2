@@ -8,43 +8,43 @@ type props = {
 export default function TodayChart({ data }: props) {
   if (!data) return null;
   const planets = [
-    data?.data.sun!,
-    data?.data.moon!,
-    data?.data.mercury!,
-    data?.data.venus!,
-    data?.data.mars!,
-    data?.data.jupiter!,
-    data?.data.saturn!,
-    data?.data.uranus!,
-    data?.data.neptune!,
-    data?.data.pluto!,
+    data?.data.sun || null,
+    data?.data.moon || null,
+    data?.data.mercury || null,
+    data?.data.venus || null,
+    data?.data.mars || null,
+    data?.data.jupiter || null,
+    data?.data.saturn || null,
+    data?.data.uranus || null,
+    data?.data.neptune || null,
+    data?.data.pluto || null,
   ];
 
   const nodes = {
-    mean_node: data?.data.mean_node!,
-    true_node: data?.data.true_node!,
+    mean_node: data?.data.mean_node || null,
+    true_node: data?.data.true_node || null,
   };
 
   const houses = [
-    data?.data.first_house!,
-    data?.data.second_house!,
-    data?.data.third_house!,
-    data?.data.fourth_house!,
-    data?.data.fifth_house!,
-    data?.data.sixth_house!,
-    data?.data.seventh_house!,
-    data?.data.eighth_house!,
-    data?.data.ninth_house!,
-    data?.data.tenth_house!,
-    data?.data.eleventh_house!,
-    data?.data.twelfth_house!,
+    data?.data.first_house || null,
+    data?.data.second_house || null,
+    data?.data.third_house || null,
+    data?.data.fourth_house || null,
+    data?.data.fifth_house || null,
+    data?.data.sixth_house || null,
+    data?.data.seventh_house || null,
+    data?.data.eighth_house || null,
+    data?.data.ninth_house || null,
+    data?.data.tenth_house || null,
+    data?.data.eleventh_house || null,
+    data?.data.twelfth_house || null,
   ];
 
-  const lunarPhase = data?.data.lunar_phase!;
+  const lunarPhase = data?.data.lunar_phase;
   const dateString = new Date(
     data?.data.year!,
-    data?.data.month! - 1!,
-    data?.data.day!
+    data?.data.month! - 1,
+    data?.data.day
   );
   return (
     <section className="flex flex-col">
