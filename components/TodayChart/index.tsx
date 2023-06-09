@@ -2,48 +2,48 @@ import { getFullSignName } from "@/lib/util";
 import { type RootObject } from "@/types/astro";
 
 type props = {
-  data: RootObject;
+  data?: RootObject;
 };
 
 export default function TodayChart({ data }: props) {
   const planets = [
-    data.data.sun,
-    data.data.moon,
-    data.data.mercury,
-    data.data.venus,
-    data.data.mars,
-    data.data.jupiter,
-    data.data.saturn,
-    data.data.uranus,
-    data.data.neptune,
-    data.data.pluto,
+    data?.data.sun,
+    data?.data.moon,
+    data?.data.mercury,
+    data?.data.venus,
+    data?.data.mars,
+    data?.data.jupiter,
+    data?.data.saturn,
+    data?.data.uranus,
+    data?.data.neptune,
+    data?.data.pluto,
   ];
 
   const nodes = {
-    mean_node: data.data.mean_node,
-    true_node: data.data.true_node,
+    mean_node: data?.data.mean_node,
+    true_node: data?.data.true_node,
   };
 
   const houses = [
-    data.data.first_house,
-    data.data.second_house,
-    data.data.third_house,
-    data.data.fourth_house,
-    data.data.fifth_house,
-    data.data.sixth_house,
-    data.data.seventh_house,
-    data.data.eighth_house,
-    data.data.ninth_house,
-    data.data.tenth_house,
-    data.data.eleventh_house,
-    data.data.twelfth_house,
+    data?.data.first_house,
+    data?.data.second_house,
+    data?.data.third_house,
+    data?.data.fourth_house,
+    data?.data.fifth_house,
+    data?.data.sixth_house,
+    data?.data.seventh_house,
+    data?.data.eighth_house,
+    data?.data.ninth_house,
+    data?.data.tenth_house,
+    data?.data.eleventh_house,
+    data?.data.twelfth_house,
   ];
 
-  const lunarPhase = data.data.lunar_phase;
+  const lunarPhase = data?.data.lunar_phase;
   const dateString = new Date(
-    data.data.year,
-    data.data.month - 1,
-    data.data.day
+    data?.data.year!,
+    data?.data.month! - 1,
+    data?.data.day
   );
   return (
     <section className="flex flex-col">
