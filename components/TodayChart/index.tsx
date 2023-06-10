@@ -1,7 +1,7 @@
 export default function TodayChart() {
   const today = new Date();
   return (
-    <section className="flex flex-col">
+    <section className="flex flex-col mb-12">
       <h2 className="flex items-baseline">
         <span className="font-serif text-2xl dark:text-primary-300 text-primary-700">
           The Sky Today

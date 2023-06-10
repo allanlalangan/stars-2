@@ -18,7 +18,7 @@ export default function Hero() {
         </em>
       </p>
       <Link
-        className="dark:bg-transparent dark:border dark:border-tertiary-200 shadow-md shadow-tertiary-200/10 hover:shadow-tertiary-200/20 bg-secondary-300 w-fit px-4 py-2 mt-2 transition hover:bg-secondary-400 active:bg-secondary-500 text-base-50"
+        className="dark:bg-transparent dark:border dark:border-tertiary-200 shadow-md shadow-tertiary-200/10 hover:shadow-tertiary-200/20 bg-secondary-300 w-fit px-4 pt-2 pb-2.5 mt-2 transition hover:bg-secondary-400 active:bg-secondary-500 text-base-50"
         href="/sign-in"
       >
         Sign In

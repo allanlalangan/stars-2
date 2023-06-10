@@ -34,7 +34,7 @@ export default function SignInForm() {
         />
       </div>
       <button
-        className="bg-primary-600 w-full p-2 mt-2 transition hover:bg-primary-700 active:bg-primary-800 text-base-50"
+        className="bg-primary-600 w-full pt-2 pb-2.5 mt-2 transition hover:bg-primary-700 active:bg-primary-800 text-base-50"
         type="submit"
       >
         Sign In
