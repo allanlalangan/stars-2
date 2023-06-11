@@ -8,3 +8,9 @@
     text-underline-offset: 0.25rem;
   }
 }
+
+@layer utilities {
+  .dark ::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+  }
+}
