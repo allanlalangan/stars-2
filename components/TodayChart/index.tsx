@@ -50,9 +50,9 @@ export default function TodayChart({ data }: TodayChartProps) {
           {today.toDateString()}
         </span>
       </h2>
-      <table className="table-auto border border-base-700 border-collapse md:w-1/2 lg:w-1/3 w-full mt-2">
+      <table className="table-auto border border-light-700 dark:border-base-700 border-collapse md:w-1/2 lg:w-1/3 w-full mt-2">
         <thead>
-          <tr className="bg-base-700">
+          <tr className="dark:bg-base-700 bg-light-700">
             <th className="p-2 font-medium text-left">Planet</th>
             <th className="p-2 font-medium text-left">Degree</th>
             <th className="p-2 font-medium text-left">Sign</th>
@@ -61,11 +61,13 @@ export default function TodayChart({ data }: TodayChartProps) {
         <tbody>
           {planets.map((planet, i) => (
             <tr key={i}>
-              <td className="p-2 border-b border-base-700">{planet.name}</td>
-              <td className="p-2 border-b border-base-700">
+              <td className="p-2 border-b border-light-700 dark:border-base-700">
+                {planet.name}
+              </td>
+              <td className="p-2 border-b border-light-700 dark:border-base-700">
                 {planet.position.toFixed(2)}°
               </td>
-              <td className="p-2 border-b border-base-700">
+              <td className="p-2 border-b border-light-700 dark:border-base-700">
                 {getFullSignName(planet.sign_num)}
               </td>
             </tr>
